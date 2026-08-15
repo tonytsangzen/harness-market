@@ -53,9 +53,9 @@ python3 -m http.server 8317
 1. 推送 `main` 分支后,GitHub Actions 自动运行 `python3 build_data.py` 重新生成 `site/data.js`(确保线上数据与清单/原始元数据一致);
 2. 以 `site/` 为根上传制品,由 `actions/deploy-pages` 部署到 GitHub Pages。
 
-**首次启用**(只需一次):仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。之后每次推送即自动发布,并可在 Actions → `Deploy site to GitHub Pages` 中查看运行状态与部署链接。
+**首次启用**(只需一次):仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**(本仓库已完成)。之后每次推送即自动发布,并可在 Actions → `Deploy site to GitHub Pages` 中查看运行状态与部署链接。
 
-**在线地址**: <https://tonytsangzen.github.io/harness-market/>(部署完成后约 1 分钟内生效)。
+**在线地址**: <https://tonytsangzen.github.io/harness-market/>(已上线,部署完成后约 1 分钟内生效)。
 
 ## 数据更新 / 重新生成
 
