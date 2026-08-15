@@ -35,6 +35,9 @@ jobs:
         # 若 raw 数据或清单比 site/data.js 更新则重新生成,保持线上数据最新
         run: python3 build_data.py
 
+      - name: List site files (debug)
+        run: ls -la site/ && du -sh site/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
