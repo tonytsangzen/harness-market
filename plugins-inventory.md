@@ -3,10 +3,10 @@
 > 收录与 deepseek-ai/DeepSeek-Harness(DSH,测试/评估 harness)直接相关的插件、扩展、任务包、集成工具。
 > 排除无关的 DeepSeek 库(纯 API SDK、聊天应用等)。
 
-**上次更新:** 2026-08-16(首次创建)
-**统计:** 总计 **32** 条 — 官方插件 1 | 测试与评估 3 | 数据加载与处理 0 | 集成适配器 3 | CLI 工具 1 | 其他 24
+**上次更新:** 2026-08-16(第 2 次运行,增量合并)
+**统计:** 总计 **34** 条 — 官方插件 1 | 测试与评估 3 | 数据加载与处理 0 | 集成适配器 3 | CLI 工具 1 | 其他 26
 
-**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`,各 30–50 条)✅;GitHub 搜索 API(3 个查询:`deepseek+harness` / `deepseek-harness` / `deepseek+eval+harness`,各 per_page=30)✅;web 搜索兜底未使用(API 全部成功,无限流)。来源覆盖完整。
+**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询:`deepseek+harness` / `deepseek-harness` / `deepseek+eval+harness`,各 per_page=30)✅;web 搜索兜底未使用(API 全部成功,无限流)。来源覆盖完整。本次无移除;旧清单全部条目复验仍有效(无 404、无 fork 混入)。注:旧统计行少计 1 条(其他分类实为 25 条),本次已修正。
 
 ---
 
@@ -83,6 +83,7 @@
 | @banlan/inkstone 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@banlan/inkstone | 364/月 | CC-BY-NC-SA-4.0 | 2026-08-13 | 会话历史浏览与管理工具,支持 Claude Code、Codex CLI、DeepSeek Harness (dsh) 等(新增于 2026-08-16) |
 | leenkcool/Blue-Whale-Harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/leenkcool/Blue-Whale-Harness | ⭐ 45 | Apache-2.0 | 2026-08-15 | DeepSeek Harness 插件集合(新增于 2026-08-16) |
 | junhongchashui/dsh-plugin-web-access 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/junhongchashui/dsh-plugin-web-access | ⭐ 0 | MIT | 2026-08-14 | 纯本地 DSH 按需网页访问插件:web_fetch 命令行抓取 + 无头浏览器双通道,免 API Key(新增于 2026-08-16) |
+| HenryZ838978/deepseek-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/HenryZ838978/deepseek-harness | ⭐ 41 | MIT | 2026-08-15 | 独立维护的 DeepSeek V4-Pro / V4-Flash harness(Python 库,pip install deepseek-harness)+ dsh CLI,非官方 DSH 仓库、与官方 DSH 插件生态无直接关联(新增于 2026-08-16) |
 
 ---
 
