@@ -2,6 +2,10 @@
 
 一个纯静态的单页插件市场网站,收录 DeepSeek Harness (DSH) 生态的插件、扩展、任务包与集成工具,支持**查询、筛选、详情查看与下载**。
 
+> 🌐 **在线访问**: <https://tonytsangzen.github.io/harness-market/>
+>
+> 由 GitHub Actions 自动部署(`.github/workflows/deploy-pages.yml`),每次推送 `main` 分支即自动重新构建 `site/data.js` 并发布到 GitHub Pages。
+
 ## 功能
 
 - **查询**:按名称、简介、主题标签、关键词、作者/发布者实时搜索(防抖)。
@@ -17,19 +21,22 @@
 
 ```
 harness-plugins/
-├── plugins-inventory.md       # 整理后的精选清单(权威来源,中文简介 + 分类)
-├── gh1.json / gh2.json / gh3.json        # GitHub 搜索原始数据
-├── npm_*.json                            # npm 搜索原始数据
-├── build_data.py              # 构建脚本:合并清单与原始元数据 → site/data.js
+├── plugins-inventory.md          # 整理后的精选清单(权威来源,中文简介 + 分类)
+├── gh1.json / gh2.json / gh3.json # GitHub 搜索原始数据
+├── npm_*.json                    # npm 搜索原始数据
+├── build_data.py                 # 构建脚本:合并清单与原始元数据 → site/data.js
+├── .github/workflows/
+│   └── deploy-pages.yml          # GitHub Actions:构建并部署 site/ 到 GitHub Pages
 ├── site/
-│   ├── index.html             # 页面结构
-│   ├── styles.css             # 样式
-│   ├── app.js                 # 交互逻辑(搜索/筛选/排序/详情/下载/复制)
-│   └── data.js                # 生成的数据(勿手改,重新生成见下)
+│   ├── index.html                # 页面结构
+│   ├── styles.css                # 样式
+│   ├── app.js                    # 交互逻辑(搜索/筛选/排序/详情/下载/复制)
+│   ├── data.js                   # 生成的数据(勿手改,重新生成见下)
+│   └── 404.html                  # Pages 404 页 → 自动跳首页
 └── README.md
 ```
 
-## 运行
+## 本地运行
 
 任意静态服务器均可(数据已内嵌,直接双击 `site/index.html` 用 `file://` 打开亦可):
 
@@ -38,6 +45,17 @@ cd site
 python3 -m http.server 8317
 # 浏览器打开 http://127.0.0.1:8317/
 ```
+
+## 线上发布(GitHub Pages)
+
+站点通过 `.github/workflows/deploy-pages.yml` 发布,流程:
+
+1. 推送 `main` 分支后,GitHub Actions 自动运行 `python3 build_data.py` 重新生成 `site/data.js`(确保线上数据与清单/原始元数据一致);
+2. 以 `site/` 为根上传制品,由 `actions/deploy-pages` 部署到 GitHub Pages。
+
+**首次启用**(只需一次):仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。之后每次推送即自动发布,并可在 Actions → `Deploy site to GitHub Pages` 中查看运行状态与部署链接。
+
+**在线地址**: <https://tonytsangzen.github.io/harness-market/>(部署完成后约 1 分钟内生效)。
 
 ## 数据更新 / 重新生成
 
