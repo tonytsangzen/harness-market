@@ -3,10 +3,10 @@
 > 收录与 deepseek-ai/DeepSeek-Harness(DSH,测试/评估 harness)直接相关的插件、扩展、任务包、集成工具。
 > 排除无关的 DeepSeek 库(纯 API SDK、聊天应用等)。
 
-**上次更新:** 2026-08-16(第 2 次运行,增量合并)
+**上次更新:** 2026-08-16(第 3 次运行,增量合并)
 **统计:** 总计 **34** 条 — 官方插件 1 | 测试与评估 3 | 数据加载与处理 0 | 集成适配器 3 | CLI 工具 1 | 其他 26
 
-**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询:`deepseek+harness` / `deepseek-harness` / `deepseek+eval+harness`,各 per_page=30)✅;web 搜索兜底未使用(API 全部成功,无限流)。来源覆盖完整。本次无移除;旧清单全部条目复验仍有效(无 404、无 fork 混入)。注:旧统计行少计 1 条(其他分类实为 25 条),本次已修正。
+**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询:`deepseek+harness` / `deepseek-harness` / `deepseek+eval+harness`,各 per_page=30)✅;web 搜索兜底未使用(API 全部成功,无限流)。来源覆盖完整。本次无新增、无移除;旧清单全部条目经本次检索结果复验仍有效(无 404、无 fork 混入)。边界排查:`@strands-agents/sdk`(仓库名含 harness,实为 Strands 通用 agent SDK)与 `Nagi-ovo/voyager`(主要面向 Gemini/AI Studio/Claude/ChatGPT 的增强套件,DSH 仅为其提示词管理器可作用的 Web UI 之一)均判定与 DSH 无直接关联,未收录。
 
 ---
 
