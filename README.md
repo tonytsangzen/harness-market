@@ -15,6 +15,7 @@
 - **下载 / 安装**:
   - GitHub 仓库 → 直接下载 ZIP / tar.gz(codeload),一键复制 `git clone` 命令;
   - npm 包 → 直接下载 `.tgz`(registry),一键复制 `npm install` 命令。
+- **多语言(中 / EN)**:页头语言切换器,界面文案、分类、类型、来源标签随语言切换;选择存入 `localStorage`,默认跟随浏览器语言;插件简介保留双语(中文 + 英文)展示。
 - 纯静态、零依赖、离线可用;数据以 `window.PLUGIN_DATA` 内嵌,无需 fetch/CORS,可直接 `file://` 打开。
 
 ## 目录结构
@@ -69,7 +70,8 @@ python3 build_data.py
 
 1. 解析 `plugins-inventory.md` 的分类表格(共 33 条精选条目);
 2. 用 GitHub / npm 原始数据补齐精确的 stars、下载量、许可证、语言、topics、版本、发布者、默认分支等;
-3. 生成带下载链接(codeload ZIP/tar.gz、npm registry tarball)与安装命令的 `site/data.js`。
+3. 生成带下载链接(codeload ZIP/tar.gz、npm registry tarball)与安装命令的 `site/data.js`;
+4. 为多语言支持输出英文标签:`type_label_en` / `source_en` / `category_en` / `categories_en`(中英映射表见 `build_data.py` 顶部常量)。
 
 ## 数据说明
 

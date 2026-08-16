@@ -23,6 +23,21 @@ NPM_FILES = [
 INVENTORY = "plugins-inventory.md"
 OUT = os.path.join("site", "data.js")
 
+# --------------------------------------------------------------------------- #
+# Bilingual labels (zh -> en) for fixed vocabulary emitted into data.js
+# --------------------------------------------------------------------------- #
+TYPE_LABEL_EN = {"GitHub 仓库": "GitHub Repository", "npm 包": "npm Package"}
+SOURCE_EN = {"GitHub 搜索": "GitHub Search", "npm 搜索": "npm Search"}
+CATEGORY_EN = {
+    "官方插件": "Official Plugins",
+    "桌面端与 Web UI": "Desktop & Web UI",
+    "功能插件 / 预设 / 其他工具": "Feature Plugins / Presets / Others",
+    "精选列表 / 教程 / 指南": "Curated Lists / Tutorials / Guides",
+    "集成适配器": "Integration Adapters",
+    "CLI 工具": "CLI Tools",
+    "测试与评估": "Testing & Evaluation",
+}
+
 
 # --------------------------------------------------------------------------- #
 # Load raw GitHub / npm search results
@@ -192,15 +207,19 @@ def build():
         name = e["name"]
         is_gh = "GitHub" in e["type"]
         is_npm = "npm" in e["type"]
+        type_label = "GitHub 仓库" if is_gh else "npm 包"
 
         rec = {
             "id": None,
             "name": name,
             "display_name": name.split("/")[-1],
             "type": "repo" if is_gh else "package",
-            "type_label": "GitHub 仓库" if is_gh else "npm 包",
+            "type_label": type_label,
+            "type_label_en": TYPE_LABEL_EN.get(type_label, type_label),
             "source": e["source"],
+            "source_en": SOURCE_EN.get(e["source"], e["source"]),
             "category": e["category"],
+            "category_en": CATEGORY_EN.get(e["category"], e["category"]),
             "url": e["url"],
             "description": None,
             "description_zh": e["desc_zh"],
@@ -303,6 +322,7 @@ def build():
         "total_stars": total_stars,
         "total_downloads": total_downloads,
         "categories": categories,
+        "categories_en": [CATEGORY_EN.get(c, c) for c in categories],
         "plugins": plugins,
     }
 
