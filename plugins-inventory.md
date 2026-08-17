@@ -3,8 +3,8 @@
 > 收录与 deepseek-ai/DeepSeek-Harness(DSH,测试/评估 harness)直接相关的插件、扩展、任务包、集成工具。
 > 排除无关的 DeepSeek 库(纯 API SDK、聊天应用等)。
 
-**上次更新:** 2026-08-17(第 5 次运行,增量合并)
-**统计:** 总计 **156** 条 — 官方插件 84 | 测试与评估 6 | 数据加载与处理 0 | 集成适配器 9 | CLI 工具 3 | 其他 54
+**上次更新:** 2026-08-17(第 5 次运行 + 手动补充 twinkle10010/dsh-rokid-aiui)
+**统计:** 总计 **157** 条 — 官方插件 84 | 测试与评估 6 | 数据加载与处理 0 | 集成适配器 10 | CLI 工具 3 | 其他 54
 
 **本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询,per_page=30)+ 2 次仓库详情核实(逐条检查 fork 字段,本轮结果无 fork)✅;web 搜索兜底未使用(API 全部成功,无限流)。本次新增 **46** 条:补全上一轮遗漏的 **33** 个官方 `@deepseek-ai/dsh-*` npm 包(含官方 `dsh` CLI 本体,均为 DSH 官方插件运行时组件,BSD-3-Clause/MIT,月下载约 18.7-22 万),另有 8 个社区 npm 插件与 5 个 GitHub 仓库;无移除(无 404、无 fork 混入,旧清单条目在本轮搜索中均有回显或仍可访问)。边界排查:本轮未收录 `Prism-Shadow/penguin-harness`、`Hmbown/CodeWhale`、`zhayujie/CowAgent`(泛化/RSI agent harness,非 DSH)、`Nagi-ovo/voyager`(多引擎增强套件,同 desktop-cc-gui 结论)、`plugin-manager-mcp`、`@sushanglewis/lincoln`、`@super-harness/server`、`@h-rig/harness-plugin`、`@glrs-dev/harness-plugin-opencode`、`rsih-opencode`、`@nurix/etna`(泛化 harness 插件,无 DSH 关联)、`@react-native-harness/*`、`@ai-sdk/harness*`、`@metaharness/*`、`metaharness`、`agentic-flow`、`reasonix`(沿用既往结论)等。
 
@@ -143,6 +143,7 @@
 | @openma/deepseek-harness-acp 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@openma/deepseek-harness-acp | 289/月 | Apache-2.0 | 2026-08-16 | Agent Client Protocol(ACP)适配器,可在 ACP 客户端中驱动 DeepSeek Harness(新增于 2026-08-17) |
 | dsh-lark-bridge 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-lark-bridge | 61/月 | MIT | 2026-08-14 | 会话暂停等待用户交互(权限请求/提问/致命错误)时实时推送飞书/Lark 通知(新增于 2026-08-17) |
 | sandbaseai/sandbase-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/sandbaseai/sandbase-harness | ⭐ 613 | Apache-2.0 | 2026-08-17 | 开源 CMA 兼容 agent 运行时(MCP 工具、沙箱会话、审计回放),内置 stdio MCP 的 DeepSeek Harness bundle(新增于 2026-08-17) |
+| twinkle10010/dsh-rokid-aiui 🆕 | GitHub 仓库 | 手动补充 | https://github.com/twinkle10010/dsh-rokid-aiui | ⭐ 5 | — | 2026-08-17 | DSH 的 Rokid AIUI 开发套件:host 插件 + Agent 预设,在 Harness GUI 内实时开发/预览 AIUI(Ink 框架)应用,悬浮预览窗 + 文件树 + 保存即热刷新(新增于 2026-08-17) |
 
 ## 其他
 
