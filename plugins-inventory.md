@@ -3,10 +3,10 @@
 > 收录与 deepseek-ai/DeepSeek-Harness(DSH,测试/评估 harness)直接相关的插件、扩展、任务包、集成工具。
 > 排除无关的 DeepSeek 库(纯 API SDK、聊天应用等)。
 
-**上次更新:** 2026-08-16(第 3 次运行,增量合并)
-**统计:** 总计 **34** 条 — 官方插件 1 | 测试与评估 3 | 数据加载与处理 0 | 集成适配器 3 | CLI 工具 1 | 其他 26
+**上次更新:** 2026-08-17(第 5 次运行,增量合并)
+**统计:** 总计 **156** 条 — 官方插件 84 | 测试与评估 6 | 数据加载与处理 0 | 集成适配器 9 | CLI 工具 3 | 其他 54
 
-**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询:`deepseek+harness` / `deepseek-harness` / `deepseek+eval+harness`,各 per_page=30)✅;web 搜索兜底未使用(API 全部成功,无限流)。来源覆盖完整。本次无新增、无移除;旧清单全部条目经本次检索结果复验仍有效(无 404、无 fork 混入)。边界排查:`@strands-agents/sdk`(仓库名含 harness,实为 Strands 通用 agent SDK)与 `Nagi-ovo/voyager`(主要面向 Gemini/AI Studio/Claude/ChatGPT 的增强套件,DSH 仅为其提示词管理器可作用的 Web UI 之一)均判定与 DSH 无直接关联,未收录。
+**本次检索来源:** npm registry 搜索 API(5 个关键词:`deepseek harness` / `deepseek-harness` / `ds-harness` / `harness plugin` / `deepseek eval`)✅;GitHub 搜索 API(3 个查询,per_page=30)+ 2 次仓库详情核实(逐条检查 fork 字段,本轮结果无 fork)✅;web 搜索兜底未使用(API 全部成功,无限流)。本次新增 **46** 条:补全上一轮遗漏的 **33** 个官方 `@deepseek-ai/dsh-*` npm 包(含官方 `dsh` CLI 本体,均为 DSH 官方插件运行时组件,BSD-3-Clause/MIT,月下载约 18.7-22 万),另有 8 个社区 npm 插件与 5 个 GitHub 仓库;无移除(无 404、无 fork 混入,旧清单条目在本轮搜索中均有回显或仍可访问)。边界排查:本轮未收录 `Prism-Shadow/penguin-harness`、`Hmbown/CodeWhale`、`zhayujie/CowAgent`(泛化/RSI agent harness,非 DSH)、`Nagi-ovo/voyager`(多引擎增强套件,同 desktop-cc-gui 结论)、`plugin-manager-mcp`、`@sushanglewis/lincoln`、`@super-harness/server`、`@h-rig/harness-plugin`、`@glrs-dev/harness-plugin-opencode`、`rsih-opencode`、`@nurix/etna`(泛化 harness 插件,无 DSH 关联)、`@react-native-harness/*`、`@ai-sdk/harness*`、`@metaharness/*`、`metaharness`、`agentic-flow`、`reasonix`(沿用既往结论)等。
 
 ---
 
@@ -16,11 +16,102 @@
 |---|---|---|---|---|---|---|---|
 | deepseek-ai/deepseek-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/deepseek-ai/deepseek-harness | ⭐ 112,489 | MIT | 2026-08-13 | DSH 官方核心仓库,"一切皆插件",提供 dsh CLI 与插件运行时(新增于 2026-08-16) |
 
+### 官方 npm 插件包(@deepseek-ai/dsh-*,共 83 个,2026-08-17 两轮累计补全)
+
+| 名称 | 类型 | 来源 | URL | stars/下载量 | 许可证 | 最近更新 | 简介 |
+|---|---|---|---|---|---|---|---|
+| @deepseek-ai/dsh-agent 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-agent | 214123/月 | MIT | 2026-08-13 | agent 接口、注册表、发起者作用域与事件词汇(新增于 2026-08-17) |
+| @deepseek-ai/dsh 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh | 195945/月 | MIT | 2026-08-13 | 官方 dsh CLI:profile 启动、插件管理与浏览器 UI 别名入口(新增于 2026-08-17) |
+| @deepseek-ai/dsh-agent-loop 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-agent-loop | 189853/月 | MIT | 2026-08-13 | 官方具体 agent 主循环插件(新增于 2026-08-17) |
+| @deepseek-ai/dsh-agent-presets 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-agent-presets | 197823/月 | BSD-3-Clause | 2026-08-10 | 按 preset cordis.yml 文件组装每会话 agent 组合(新增于 2026-08-17) |
+| @deepseek-ai/dsh-anonymous-user-id 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-anonymous-user-id | 189289/月 | BSD-3-Clause | 2026-08-12 | 匿名用户标识,用于遥测与反馈关联(新增于 2026-08-17) |
+| @deepseek-ai/dsh-attachment 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-attachment | 215641/月 | BSD-3-Clause | 2026-08-10 | 持久不可变附件存储 seam(ctx.attachment)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-attachment-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-attachment-local | 188017/月 | BSD-3-Clause | 2026-08-10 | DSH_HOME 内容寻址附件存储(新增于 2026-08-17) |
+| @deepseek-ai/dsh-base 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-base | 188834/月 | BSD-3-Clause | 2026-08-10 | 共享 dsh 核心 profile bundle,每个 profile 的首个 patch 层(新增于 2026-08-17) |
+| @deepseek-ai/dsh-bash-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-bash-local | 187414/月 | BSD-3-Clause | 2026-08-10 | bash 执行器 seam 的本地子进程实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-bash-sandbox 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-bash-sandbox | 188333/月 | BSD-3-Clause | 2026-08-10 | 沙箱版 bash 执行器实现,隔离所有命令(新增于 2026-08-17) |
+| @deepseek-ai/dsh-brand 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-brand | 216798/月 | BSD-3-Clause | 2026-08-10 | Branded<B> 名义类型原语(新增于 2026-08-17) |
+| @deepseek-ai/dsh-client-ui-settings-plugin-inventory 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-client-ui-settings-plugin-inventory | 187752/月 | BSD-3-Clause | 2026-08-12 | Web 插件设置页中的 Cordis Loader 清单只读页(新增于 2026-08-17) |
+| @deepseek-ai/dsh-client-ui-sidebar 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-client-ui-sidebar | 189886/月 | BSD-3-Clause | 2026-08-10 | Web 端侧边栏插件:会话多级树、搜索、分组与状态点(新增于 2026-08-17) |
+| @deepseek-ai/dsh-client-ui-theme 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-client-ui-theme | 190627/月 | BSD-3-Clause | 2026-08-10 | Web 主题插件:ThemeService(亮/暗/跟随系统)与 --dsw-* token 基础样式(新增于 2026-08-17) |
+| @deepseek-ai/dsh-code-runtime-worker-thread 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-code-runtime-worker-thread | 188062/月 | BSD-3-Clause | 2026-08-12 | 代码执行 seam 的 worker-thread 实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-code-runtime 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-code-runtime | 205856/月 | BSD-3-Clause | 2026-08-10 | 代码执行 seam(ctx.codeRuntime)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-command-feedback 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-command-feedback | 187918/月 | BSD-3-Clause | 2026-08-10 | 会话反馈产出与 /feedback 命令(新增于 2026-08-17) |
+| @deepseek-ai/dsh-command-goal 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-command-goal | 188191/月 | BSD-3-Clause | 2026-08-10 | 会话内持久化目标 /goal 命令(新增于 2026-08-17) |
+| @deepseek-ai/dsh-commands 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-commands | 201924/月 | BSD-3-Clause | 2026-08-10 | 插件自有的人类命令注册表,供 DSH UI 表面使用(新增于 2026-08-17) |
+| @deepseek-ai/dsh-compaction 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-compaction | 191462/月 | BSD-3-Clause | 2026-08-12 | 上下文压缩服务 seam(ctx.compaction)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-compaction-basic 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-compaction-basic | 188229/月 | BSD-3-Clause | 2026-08-12 | token 计量驱动的压缩策略与 LLM 摘要后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-fs 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-fs | 191035/月 | BSD-3-Clause | 2026-08-10 | 文件系统能力 seam(ctx.fs)词汇类型(新增于 2026-08-17) |
+| @deepseek-ai/dsh-fs-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-fs-local | 189132/月 | BSD-3-Clause | 2026-08-10 | ctx.fs 的本地文件系统实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-fs-observation-policy 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-fs-observation-policy | 188001/月 | BSD-3-Clause | 2026-08-12 | 文件上下文策略插件:观察态、先读后写、版本守卫的 write/edit(新增于 2026-08-17) |
+| @deepseek-ai/dsh-fs-sandbox 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-fs-sandbox | 188127/月 | BSD-3-Clause | 2026-08-10 | 沙箱强制文件系统:围栏写/编辑/删除(新增于 2026-08-17) |
+| @deepseek-ai/dsh-goal 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-goal | 198160/月 | BSD-3-Clause | 2026-08-10 | 事件溯源的同会话目标状态与生命周期服务(新增于 2026-08-17) |
+| @deepseek-ai/dsh-goal-round-driver 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-goal-round-driver | 188446/月 | BSD-3-Clause | 2026-08-12 | 竞态围栏的同会话 goal 轮次驱动器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-headless 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-headless | 188127/月 | BSD-3-Clause | 2026-08-10 | 无头一键运行 bundle:无 Host/HTTP 直跑 Agent/Session(新增于 2026-08-17) |
+| @deepseek-ai/dsh-home-paths 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-home-paths | 200252/月 | BSD-3-Clause | 2026-08-12 | 共享文件系统路径助手(新增于 2026-08-17) |
+| @deepseek-ai/dsh-host-directory-picker 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-host-directory-picker | 196701/月 | BSD-3-Clause | 2026-08-10 | 工作区目录选择 seam 抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-host-directory-picker-native 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-host-directory-picker-native | 187957/月 | BSD-3-Clause | 2026-08-10 | 目录选择 seam 的原生 OS 选择器后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-host-frontend-static 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-host-frontend-static | 187841/月 | BSD-3-Clause | 2026-08-12 | Web shell SPA 静态资源服务器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-invariants 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-invariants | 220464/月 | BSD-3-Clause | 2026-08-10 | 包级运行时不变量注册服务(新增于 2026-08-17) |
+| @deepseek-ai/dsh-jobs-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-jobs-local | 188662/月 | BSD-3-Clause | 2026-08-12 | 后台任务注册表 seam 的进程内实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-launch-environment 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-launch-environment | 190689/月 | BSD-3-Clause | 2026-08-12 | 不可变启动环境,记录每项配置来源层(新增于 2026-08-17) |
+| @deepseek-ai/dsh-llm 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-llm | 219280/月 | BSD-3-Clause | 2026-08-10 | provider 无关的 LLM 服务接口(新增于 2026-08-17) |
+| @deepseek-ai/dsh-llm-deepseek 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-llm-deepseek | 190823/月 | BSD-3-Clause | 2026-08-10 | LLM seam 的 DeepSeek chat-completions 适配器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-llm-retry 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-llm-retry | 197550/月 | BSD-3-Clause | 2026-08-10 | 按 provider 路由的 LLM 请求重试策略(新增于 2026-08-17) |
+| @deepseek-ai/dsh-message-feedback 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-message-feedback | 195000/月 | BSD-3-Clause | 2026-08-11 | 绑定生命周期的逐消息评分与备注 sidecar(新增于 2026-08-17) |
+| @deepseek-ai/dsh-permission-presets 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-permission-presets | 188363/月 | BSD-3-Clause | 2026-08-12 | 用户权限预设(ctx.permissionPresets)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-persona 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-persona | 189896/月 | BSD-3-Clause | 2026-08-10 | 组合式部署 persona 配置段(新增于 2026-08-17) |
+| @deepseek-ai/dsh-pwsh-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-pwsh-local | 188201/月 | BSD-3-Clause | 2026-08-10 | 本地 PowerShell 版 bash 执行器实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-pwsh-sandbox 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-pwsh-sandbox | 188238/月 | BSD-3-Clause | 2026-08-10 | 沙箱版 PowerShell 执行器实现,隔离所有命令(新增于 2026-08-17) |
+| @deepseek-ai/dsh-sandbox 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-sandbox | 192496/月 | BSD-3-Clause | 2026-08-10 | 进程沙箱 seam(ctx.sandbox)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-sandbox-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-sandbox-local | 188547/月 | BSD-3-Clause | 2026-08-10 | 本地沙箱后端:bwrap、landlock-run、macOS Seatbelt、Windows(新增于 2026-08-17) |
+| @deepseek-ai/dsh-sandbox-windows-acl 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-sandbox-windows-acl | 188628/月 | BSD-3-Clause | 2026-08-10 | Windows ACL 写限制沙箱后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-scope 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-scope | 213313/月 | BSD-3-Clause | 2026-08-10 | 作用域上下文注册原语(scope 标签/过滤分发)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-sdk-jsonrpc-server 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-sdk-jsonrpc-server | 1435/月 | BSD-3-Clause | 2026-08-12 | 进程外 SDK 客户端的 stdio JSON-RPC 服务器插件(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session | 217135/月 | BSD-3-Clause | 2026-08-10 | 事件溯源会话存储(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-persistence 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-persistence | 198882/月 | BSD-3-Clause | 2026-08-10 | 会话持久化 seam 抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-persistence-jsonl 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-persistence-jsonl | 189252/月 | BSD-3-Clause | 2026-08-10 | JSONL 持久会话存储后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-stats 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-stats | 191405/月 | BSD-3-Clause | 2026-08-12 | 全日志会话计数与墙钟时间投影(sessionStats)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-telemetry-otel 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-telemetry-otel | 187895/月 | BSD-3-Clause | 2026-08-10 | OpenTelemetry 遥测后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-title 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-title | 198263/月 | BSD-3-Clause | 2026-08-10 | 基于日志的会话标题服务与提供器注册表(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-title-first-prompt-llm 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-title-first-prompt-llm | 187743/月 | BSD-3-Clause | 2026-08-12 | 会话标题的首条消息 LLM 提供插件(新增于 2026-08-17) |
+| @deepseek-ai/dsh-session-title-llm 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-session-title-llm | 186719/月 | BSD-3-Clause | 2026-08-10 | 会话标题提供器的共享 LLM 生成策略(新增于 2026-08-17) |
+| @deepseek-ai/dsh-shell 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-shell | 190013/月 | BSD-3-Clause | 2026-08-12 | bash 执行器 seam(ctx.shell)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-settings 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-settings | 205238/月 | BSD-3-Clause | 2026-08-10 | 用户设置 seam(ctx.settings)抽象(新增于 2026-08-17) |
+| @deepseek-ai/dsh-settings-file 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-settings-file | 187980/月 | BSD-3-Clause | 2026-08-12 | settings.yaml 文件设置提供器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-skill 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-skill | 201083/月 | BSD-3-Clause | 2026-08-10 | agent 技能提供器注册表(新增于 2026-08-17) |
+| @deepseek-ai/dsh-skill-badge 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-skill-badge | 187927/月 | BSD-3-Clause | 2026-08-10 | 内置 badge 技能提供器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-skill-filesystem 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-skill-filesystem | 188791/月 | BSD-3-Clause | 2026-08-12 | 本地文件系统技能提供器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-spill 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-spill | 186814/月 | BSD-3-Clause | 2026-08-10 | spill 存储 seam(ctx.spillStore)抽象:超大工具输出落盘并返回定位符(新增于 2026-08-17) |
+| @deepseek-ai/dsh-spill-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-spill-local | 187930/月 | BSD-3-Clause | 2026-08-10 | spill 存储的本地文件系统实现(会话私有文件)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-storage 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-storage | 195905/月 | BSD-3-Clause | 2026-08-10 | 存储中心 ctx.storage:后端注册表与数据设施(新增于 2026-08-17) |
+| @deepseek-ai/dsh-storage-domain 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-storage-domain | 196007/月 | BSD-3-Clause | 2026-08-10 | 域数据表单:schema 校验、事件发射的 KV 域(新增于 2026-08-17) |
+| @deepseek-ai/dsh-storage-json 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-storage-json | 188221/月 | BSD-3-Clause | 2026-08-10 | JSON 文件 KV 存储后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-subprocess-local 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-subprocess-local | 189300/月 | BSD-3-Clause | 2026-08-10 | 子进程 seam 的本地实现(新增于 2026-08-17) |
+| @deepseek-ai/dsh-system-prompt 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-system-prompt | 213186/月 | BSD-3-Clause | 2026-08-10 | 系统提示词装配注册表(新增于 2026-08-17) |
+| @deepseek-ai/dsh-terminal 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-terminal | 189797/月 | BSD-3-Clause | 2026-08-12 | 持久 PTY 会话 seam(新增于 2026-08-17) |
+| @deepseek-ai/dsh-terminal-bash 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-terminal-bash | 189621/月 | BSD-3-Clause | 2026-08-12 | 子进程终端原语之上的持久 shell PTY 后端(新增于 2026-08-17) |
+| @deepseek-ai/dsh-token-meter 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-token-meter | 194136/月 | BSD-3-Clause | 2026-08-10 | 可回放感知的 token 计量服务(ctx.tokenMeter)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-cordis 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-cordis | 190044/月 | BSD-3-Clause | 2026-08-10 | 自指 cordis 工具集:检查运行时并挂载/卸载模型编写的插件(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-fs 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-fs | 188762/月 | BSD-3-Clause | 2026-08-10 | 面向模型的文件系统工具(read/write/edit,基于 ctx.fs)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-skill 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-skill | 189052/月 | BSD-3-Clause | 2026-08-10 | 面向模型的技能加载工具(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-subagent 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-subagent | 188464/月 | BSD-3-Clause | 2026-08-10 | 基于 ctx.subagents 的模型侧子 agent 委托工具(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tools 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tools | 211282/月 | BSD-3-Clause | 2026-08-10 | 工具注册表与执行管线(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-todo 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-todo | 188616/月 | BSD-3-Clause | 2026-08-10 | 面向模型的 todo_write 工具,基于事件溯源会话日志(新增于 2026-08-17) |
+| @deepseek-ai/dsh-tool-web 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-tool-web | 188373/月 | BSD-3-Clause | 2026-08-10 | 面向模型的 web 工具(web_search/web_fetch,基于 ctx.web)(新增于 2026-08-17) |
+| @deepseek-ai/dsh-user-approval 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-user-approval | 209765/月 | BSD-3-Clause | 2026-08-10 | 用户批准 seam(ctx.approval):一次性权限决策(新增于 2026-08-17) |
+| @deepseek-ai/dsh-web-app 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-web-app | 188992/月 | BSD-3-Clause | 2026-08-10 | Web 界面 bundle:web patch 层与运行时胶水(新增于 2026-08-17) |
+| @deepseek-ai/dsh-web-search-deepseek 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-web-search-deepseek | 188052/月 | BSD-3-Clause | 2026-08-10 | DeepSeek 原生 web_search 搜索提供器(新增于 2026-08-17) |
+| @deepseek-ai/dsh-workspace 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-ai/dsh-workspace | 196916/月 | BSD-3-Clause | 2026-08-10 | 工作区实体注册表(ctx.workspace)(新增于 2026-08-17) |
+
 ## CLI 工具
 
 | 名称 | 类型 | 来源 | URL | stars/下载量 | 许可证 | 最近更新 | 简介 |
 |---|---|---|---|---|---|---|---|
 | create-dsh-plugin 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/create-dsh-plugin | 135/月 | MIT | 2026-08-13 | DSH 插件脚手架 CLI:秒级生成 tool/events/webui 模板,内置 --verify 冒烟测试与 next-tag 版本锁定(新增于 2026-08-16) |
+
+| @deepseek-harness-tui/dsh-tui 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui | 3360/月 | MIT | 2026-08-17 | DSH agent 的 Claude Code 风格交互式 TUI 前端,基于 portable 运行时(新增于 2026-08-17) |
+| dsh-web-open 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-web-open | 1792/月 | MIT | 2026-08-15 | 自动打开浏览器、托盘图标、桌面快捷方式与 dsh web 一键安装器(新增于 2026-08-17) |
 
 ## 测试与评估(evals / tasks / 基准)
 
@@ -29,6 +120,10 @@
 | BiBoyang/dsh-eval-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/BiBoyang/dsh-eval-harness | ⭐ 5 | — | 2026-08-14 | DSH 插件评测工具:YAML 用例驱动真实 agent 回归评测,支持 PASS/WARN/FAIL 门禁与 baseline 对比(新增于 2026-08-16) |
 | ShawnSiao/dsh-agent-eval 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/ShawnSiao/dsh-agent-eval | ⭐ 1 | — | 2026-08-13 | 规划中的 DSH agent 与插件可重复回归评测框架(新增于 2026-08-16) |
 | hccccc01333/dsh-eval 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/hccccc01333/dsh-eval | ⭐ 0 | MIT | 2026-08-14 | DSH agent 评测平台:benchmark YAML + headless dsh 编排 + 基于轨迹的分析(新增于 2026-08-16) |
+
+| dsh-testkit 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-testkit | 1027/月 | MIT | 2026-08-15 | DSH 插件真实宿主生命周期测试工具(新增于 2026-08-17) |
+| dsh-plugin-clinic 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-plugin-clinic | 136/月 | MIT | 2026-08-16 | 对已装 DSH 插件集做只读健康检查:加载/清单/依赖诊断(新增于 2026-08-17) |
+| ruby1304/dsh-public-plugins 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/ruby1304/dsh-public-plugins | ⭐ 0 | MIT | 2026-08-17 | 可复用 DSH 插件与技能集:工作流画布工具包、盲评 harness、LLM 成本实验室与事件台账(新增于 2026-08-17) |
 
 ## 数据加载与处理
 
@@ -41,6 +136,13 @@
 | xiufengsun/TokenTracker 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/xiufengsun/TokenTracker | ⭐ 1,320 | MIT | 2026-08-15 | 本地优先的 AI token 用量与成本追踪器,覆盖 31 种编码工具(含 DeepSeek Harness),自带原生应用、不读取提示词内容(新增于 2026-08-16) |
 | @m2atrid/pis-harness-dsh-adapter 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@m2atrid/pis-harness-dsh-adapter | 138/月 | MIT | 2026-08-06 | DeepSeek Harness 适配器,当前为契约先行版本,待 DSH 协议正式发布后实现(新增于 2026-08-16) |
 | egnmosk/dsh-browser-bridge 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/egnmosk/dsh-browser-bridge | ⭐ 0 | MIT | 2026-08-13 | DSH 插件 + 浏览器扩展桥接:为 agent 提供 browser_* 导航/点击/输入/截图工具(新增于 2026-08-16) |
+
+| dsh-bridges 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-bridges | 140/月 | Apache-2.0 | 2026-08-16 | 桥接为其他编码 agent(Claude Code 等)配置的项目,使其可被 DSH 驱动(新增于 2026-08-17) |
+| dsh-feishu-bot 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-feishu-bot | 3614/月 | AGPL-3.0 | 2026-08-17 | 将 DSH 接入飞书/Lark:流式卡片、项目工作区(新增于 2026-08-17) |
+| dsh-lark-bot 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-lark-bot | 3640/月 | AGPL-3.0 | 2026-08-17 | 将 DSH 接入飞书/Lark 的机器人桥(与 dsh-feishu-bot 同族独立包)(新增于 2026-08-17) |
+| @openma/deepseek-harness-acp 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@openma/deepseek-harness-acp | 289/月 | Apache-2.0 | 2026-08-16 | Agent Client Protocol(ACP)适配器,可在 ACP 客户端中驱动 DeepSeek Harness(新增于 2026-08-17) |
+| dsh-lark-bridge 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-lark-bridge | 61/月 | MIT | 2026-08-14 | 会话暂停等待用户交互(权限请求/提问/致命错误)时实时推送飞书/Lark 通知(新增于 2026-08-17) |
+| sandbaseai/sandbase-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/sandbaseai/sandbase-harness | ⭐ 613 | Apache-2.0 | 2026-08-17 | 开源 CMA 兼容 agent 运行时(MCP 工具、沙箱会话、审计回放),内置 stdio MCP 的 DeepSeek Harness bundle(新增于 2026-08-17) |
 
 ## 其他
 
@@ -60,6 +162,8 @@
 | ningbainb/deepseek-harness-desktop 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/ningbainb/deepseek-harness-desktop | ⭐ 44 | BSD-3-Clause | 2026-08-15 | Windows 无损桌面应用,带完整 DSH Web UI、插件与皮肤(新增于 2026-08-16) |
 | wess09/DeepSeekHarnessDesktop 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/wess09/DeepSeekHarnessDesktop | ⭐ 37 | MIT | 2026-08-13 | DSH 桌面端打包分发(新增于 2026-08-16) |
 
+| fufankeji/deepseek-harness-studio 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/fufankeji/deepseek-harness-studio | ⭐ 158 | MIT | 2026-08-16 | DSH 零代码桌面端:一键启动,内置插件发现/热点推送/一键安装管理(新增于 2026-08-17) |
+
 ### 精选列表 / 教程 / 指南
 
 | 名称 | 类型 | 来源 | URL | stars/下载量 | 许可证 | 最近更新 | 简介 |
@@ -72,6 +176,8 @@
 | Dominic789654/awesome-deepseek-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/Dominic789654/awesome-deepseek-harness | ⭐ 48 | NOASSERTION | 2026-08-15 | DSH 插件、技能、MCP 服务器、patch/profile 层、编排器与 UI 精选(新增于 2026-08-16) |
 | ht426/deepseek-harness-tutorial 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/ht426/deepseek-harness-tutorial | ⭐ 61 | MIT | 2026-08-13 | DeepSeek Harness 中文详细学习教程(新增于 2026-08-16) |
 | beancookie/awesome-dsh-plugin 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/beancookie/awesome-dsh-plugin | ⭐ 31 | CC0-1.0 | 2026-08-15 | Awesome DeepSeek Harness 插件列表(新增于 2026-08-16) |
+| Anil-matcha/awesome-deepseek-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/Anil-matcha/awesome-deepseek-harness | ⭐ 923 | — | 2026-08-17 | DSH 及其最佳社区插件精选指南(新增于 2026-08-17) |
+| imsai-sh/awesome-deepseek-harness-plugins 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/imsai-sh/awesome-deepseek-harness-plugins | ⭐ 50 | MIT | 2026-08-17 | DSH 插件商店/市场 hub:3100+ 插件搜索、排行、安装命令与免费公开 API(新增于 2026-08-17) |
 
 ### 功能插件 / 预设 / 其他工具
 
@@ -85,10 +191,42 @@
 | junhongchashui/dsh-plugin-web-access 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/junhongchashui/dsh-plugin-web-access | ⭐ 0 | MIT | 2026-08-14 | 纯本地 DSH 按需网页访问插件:web_fetch 命令行抓取 + 无头浏览器双通道,免 API Key(新增于 2026-08-16) |
 | HenryZ838978/deepseek-harness 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/HenryZ838978/deepseek-harness | ⭐ 41 | MIT | 2026-08-15 | 独立维护的 DeepSeek V4-Pro / V4-Flash harness(Python 库,pip install deepseek-harness)+ dsh CLI,非官方 DSH 仓库、与官方 DSH 插件生态无直接关联(新增于 2026-08-16) |
 
+| nexu-io/open-design 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/nexu-io/open-design | ⭐ 87,548 | Apache-2.0 | 2026-08-16 | 开源 Claude Design 替代品,DSH 设计插件(新增于 2026-08-17) |
+| @crazy_th/dsh-computer-use 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@crazy_th/dsh-computer-use | 1148/月 | MIT | 2026-08-15 | Windows 原生 Computer Use 工具集(新增于 2026-08-17) |
+| dsh-context 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-context | 1022/月 | Apache-2.0 | 2026-08-16 | 上下文看板与 /context 命令,可视化上下文占用(新增于 2026-08-17) |
+| dsh-graphlint 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-graphlint | 167/月 | MIT | 2026-08-16 | graphlint 死代码检测工具插件包(graphlint_* 工具)(新增于 2026-08-17) |
+| dsh-multimodal-bridge 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-multimodal-bridge | 241/月 | MIT | 2026-08-16 | 多模态插件包:qwen_vision 图像理解与 qwen_generation 生成工具(新增于 2026-08-17) |
+| dsh-smart-approval 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-smart-approval | 792/月 | MIT | 2026-08-16 | fail-closed 的 LLM 辅助审批审查器,默认拒绝(新增于 2026-08-17) |
+| dsh-wechat-mp 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-wechat-mp | 278/月 | MIT | 2026-08-16 | 将 markdown 排版为微信公众号图文草稿(新增于 2026-08-17) |
+| @icelily/dsh-gitbash-preset 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@icelily/dsh-gitbash-preset | 590/月 | MIT | 2026-08-16 | 安装 minimal-gitbash agent 预设(Windows 变体)(新增于 2026-08-17) |
+| laizhixingxingdeli/dsh-coagenthub 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/laizhixingxingdeli/dsh-coagenthub | 1356/月 | MIT | 2026-08-16 | 操作 CoAgentHub 的 DSH 插件:列参与者/建群/发消息(新增于 2026-08-17) |
+| ZhenMoon/browser-auto 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/ZhenMoon/browser-auto | ⭐ 0 | MIT | 2026-08-16 | DSH 真实浏览器自动化:12 个浏览器模型工具(打开/截图等)(新增于 2026-08-17) |
+| zhpingyun008/eve-dsh-plugins 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/zhpingyun008/eve-dsh-plugins | ⭐ 0 | — | 2026-08-16 | CMMI5 治理插件集:质量门禁 + 10 个流程插件(新增于 2026-08-17) |
+| Devin-AXIS/deepseek-design 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/Devin-AXIS/deepseek-design | ⭐ 62 | NOASSERTION | 2026-08-16 | DSH 可编辑设计系统:AI 生成、可视化编辑、模板市场与 PPT(新增于 2026-08-17) |
+| dsh-full-remote 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-full-remote | 422/月 | MIT | 2026-08-17 | token 门控反向代理,公网隧道下保持设置、凭据与文件访问的远程访问插件(新增于 2026-08-17) |
+| dsh-nocturne-memory 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-nocturne-memory | 284/月 | MIT | 2026-08-17 | Nocturne Memory 客户端:自动化长期记忆(启动/读取/搜索/创建/更新),基于自建 MCP server(新增于 2026-08-17) |
+| dsh-cloudflare-browser-run 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-cloudflare-browser-run | 304/月 | MIT | 2026-08-17 | Cloudflare Browser Run 驱动的浏览工具(markdown/截图/PDF),真实无头 Chrome + JS 渲染(新增于 2026-08-17) |
+| @dexthemes/deepseek-harness-plugin 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@dexthemes/deepseek-harness-plugin | 533/月 | MIT | 2026-08-17 | DSH 主题插件:发现、预览、应用、恢复与回滚主题(新增于 2026-08-17) |
+| dsh-multi-folder 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-multi-folder | 304/月 | MIT | 2026-08-17 | 为项目增加次级工作目录:agent 保持主工作区为 cwd,获得同等读写/执行权限(新增于 2026-08-17) |
+| dsh-image-pathify 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/dsh-image-pathify | 127/月 | MIT | 2026-08-17 | 让纯文本模型接收粘贴图片,内置 OpenAI 兼容视觉分析工具(新增于 2026-08-17) |
+| @pinkbanana/dsh-balance 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@pinkbanana/dsh-balance | 211/月 | MIT | 2026-08-17 | 设置页展示 API 余额与模型,并在聊天输入框下方显示余额(新增于 2026-08-17) |
+| nexpeakcore/deepseek-harness-pr-review 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/nexpeakcore/deepseek-harness-pr-review | ⭐ 30 | MIT | 2026-08-17 | 基于 DSH headless 的 PR 审查自动化:逐条核验 PR 描述、文档与现实对照、人机协同+轮询+Web 仪表盘(新增于 2026-08-17) |
+
+### 账户 / 安全 / 其他
+
+| 名称 | 类型 | 来源 | URL | stars/下载量 | 许可证 | 最近更新 | 简介 |
+|---|---|---|---|---|---|---|---|
+| deepseek-harness-wallet 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/deepseek-harness-wallet | 333/月 | MIT | 2026-08-16 | 本地优先的账户监控、用量记账、官方充值与额度提醒(新增于 2026-08-17) |
+| @tokenharbor/halyard 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@tokenharbor/halyard | 2249/月 | MIT | 2026-08-15 | 基于 DeepSeek Harness 构建、对接 Token Harbor 的 agent harness(新增于 2026-08-17) |
+| metavibe-dsh 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/metavibe-dsh | 519/月 | MIT | 2026-08-16 | MetaVibe 原生 DSH 插件:只读黄金架构地图(hub)与导航(新增于 2026-08-17) |
+| zoahdev/dsh-poison-guard 🆕 | GitHub 仓库 | GitHub 搜索 | https://github.com/zoahdev/dsh-poison-guard | ⭐ 0 | MIT | 2026-08-16 | 安装前供应链投毒扫描器:AST(JS-X-Ray)静态分析 DSH 插件(新增于 2026-08-17) |
+| @agentmentor/install 🆕 | npm 包 | npm 搜索 | https://www.npmjs.com/package/@agentmentor/install | 746/月 | proprietary | 2026-08-16 | Agent Mentor DSH 插件的公开安装器(插件本体为私有分发)(新增于 2026-08-17) |
+
 ---
 
 ## 备注
 
 - **数据加载与处理**分类本次未发现直接相关条目。
 - 已排除的常见干扰项:`@ai-sdk/deepseek`、`@langchain/deepseek`、`deepseek-mcp-server`、`n8n-nodes-deepseek`、`deepseek-cli`、`deepseek-chat`、`deepseek-kit` 等(纯 DeepSeek API SDK/聊天/代理类,与 DSH 无关);`@react-native-harness/*`、`agentic-flow`、`@metaharness/*`、`metaharness`、`reasonix`、`CodeWhale`、`CowAgent` 等(同名/泛化 "harness",非 DSH 生态)。
+- 本轮(第 5 次)边界核实:`sandbaseai/sandbase-harness` 经仓库详情确认含 "native DeepSeek Harness bundle over stdio MCP",故收录于集成适配器;`nexpeakcore/deepseek-harness-pr-review` 基于 DSH headless 运行,收录于功能插件;`Prism-Shadow/penguin-harness`(RSI 泛化 harness)、`Nagi-ovo/voyager`(多引擎增强套件)、`plugin-manager-mcp`、`@sushanglewis/lincoln`、`@super-harness/server` 等均无 DSH 关联,未收录。
 - `morlay/deepseek-harness` 已重定向废弃(指向 playpen),未收录。
